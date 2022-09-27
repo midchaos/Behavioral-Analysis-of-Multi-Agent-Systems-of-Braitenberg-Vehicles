@@ -1,0 +1,2454 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.519586266521262 0.00018631735181156818 0.8544179755414445 3.1409895038561157
+  position 4.818225445854805 -0.28566143098619856 8.835714366797637
+  follow "robot_ts"
+  followType "None"
+}
+TexturedBackground {
+}
+RectangleArena {
+  floorSize 5 5
+  wallAppearance NULL
+}
+Solid {
+  translation -0.44 0.47 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.3 0.5 0.4
+      }
+    }
+  ]
+  boundingObject Box {
+    size 0.3 0.5 0.4
+  }
+  physics Physics {
+    mass 50
+  }
+}
+Solid {
+  translation 0.43 -0.44 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.3 0.5 0.4
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject Box {
+    size 0.3 0.5 0.4
+  }
+  physics Physics {
+    mass 50
+  }
+}
+Solid {
+  translation -0.5 -1.51 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.3 0.5 0.4
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject Box {
+    size 0.3 0.5 0.4
+  }
+  physics Physics {
+    mass 50
+  }
+}
+Solid {
+  translation 0.76 1.51 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.3 0.5 0.4
+      }
+    }
+  ]
+  name "solid(3)"
+  boundingObject Box {
+    size 0.3 0.5 0.4
+  }
+  physics Physics {
+    mass 50
+    centerOfMass [
+      0 0 0
+    ]
+  }
+}
+Robot {
+  translation 1.74941 1.87777 0.0458155
+  rotation 0.8921720912527044 -0.3086030315643826 -0.3298380337363306 1.64331
+  children [
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper(1)"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper(2)"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper(3)"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    LightSensor {
+      translation 0.026862 0.02 0.0500987
+      rotation 0 -1 0 0.984401
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_left"
+    }
+    LightSensor {
+      translation -0.033138 0.02 0.0500985
+      rotation 0 -1 0 2.0944
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_right"
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        roughness 1
+        metalness 0
+        emissiveIntensity 0
+      }
+      geometry Box {
+        size 0.1 0.075 0.09
+      }
+    }
+    DEF WHEEL1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 53275.03532359022
+        anchor 0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.06000486809676904 -8.461602895848541e-05 0.00010241992606384756
+        rotation -0.9999994387131786 -0.0005633293192836714 -0.0008973479847143022 5.673809238958316
+        children [
+          DEF WHEEL Transform {
+            rotation 0 1 0 1.5708
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.04
+                  subdivision 24
+                }
+              }
+            ]
+          }
+        ]
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 61829.98042883338
+        anchor -0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.060005240391349496 6.747882884080235e-06 -8.690811847392948e-05
+        rotation -0.9999999369502512 -0.00027863749528147223 0.00022013777402013815 3.1018533343777386
+        children [
+          USE WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+  ]
+  name "robot_ts"
+  boundingObject USE BODY
+  physics Physics {
+    density 1
+    mass 0.5
+  }
+  controller "bumper"
+  controllerArgs [
+    ""
+  ]
+}
+Robot {
+  translation 2.12153 2.15398 0.0176481
+  rotation 0.9564186899372106 -0.20132913219460988 -0.21149437360968995 1.5773269491649573
+  children [
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper(1)"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper(2)"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper(3)"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    LightSensor {
+      translation 0.026862 0.02 0.0500987
+      rotation 0 -1 0 0.984401
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_left"
+    }
+    LightSensor {
+      translation -0.033138 0.02 0.0500985
+      rotation 0 -1 0 2.0944
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_right"
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        roughness 1
+        metalness 0
+        emissiveIntensity 0
+      }
+      geometry Box {
+        size 0.1 0.075 0.09
+      }
+    }
+    DEF WHEEL1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 53271.506841255825
+        anchor 0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.060004868096769026 3.9717768447402606e-05 -0.0001267762299533577
+        rotation 0.9999999488553745 -0.0002331323312488381 0.0002189487723154767 3.3640787084624026
+        children [
+          DEF WHEEL Transform {
+            rotation 0 1 0 1.5708
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.04
+                  subdivision 24
+                }
+              }
+            ]
+          }
+        ]
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 61671.224986161185
+        anchor -0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.060005240391349496 -8.713667118817356e-05 2.3990653054200194e-06
+        rotation 0.9999998651545982 3.334138564733279e-05 -0.0005182462131289256 1.505522117156539
+        children [
+          USE WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+  ]
+  name "robot_ts(15)"
+  boundingObject USE BODY
+  physics Physics {
+    density 1
+    mass 0.5
+  }
+  controller "bumper"
+  controllerArgs [
+    ""
+  ]
+}
+Robot {
+  translation 0.410082 -0.0339284 0.0527294
+  rotation -0.7733487234455192 0.44938583929673165 0.44719584007988944 -1.769795307179586
+  children [
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    LightSensor {
+      translation 0.026862 0.02 0.0500987
+      rotation 0 -1 0 0.984401
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_left"
+    }
+    LightSensor {
+      translation -0.033138 0.02 0.0500985
+      rotation 0 -1 0 2.0944
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_right"
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        roughness 1
+        metalness 0
+        emissiveIntensity 0
+      }
+      geometry Box {
+        size 0.1 0.075 0.09
+      }
+    }
+    DEF WHEEL1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 52859.84662378223
+        anchor 0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.060004868096769026 -2.5354441496292597e-05 0.00013041037500152502
+        rotation -0.9999835563869146 -0.004152886308009515 -0.003954806075030146 6.172277274362678
+        children [
+          DEF WHEEL Transform {
+            rotation 0 1 0 1.5708
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.04
+                  subdivision 24
+                }
+              }
+            ]
+          }
+        ]
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 60718.30350271584
+        anchor -0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.060005240391349496 4.364242375434082e-05 -7.545789441100459e-05
+        rotation 0.9999999330918593 0.00033015037599478617 -0.00015753414332358995 3.628205197261824
+        children [
+          USE WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+  ]
+  name "robot_ts(13)"
+  boundingObject USE BODY
+  physics Physics {
+    density 1
+    mass 0.5
+  }
+  controller "bumper"
+  controllerArgs [
+    ""
+  ]
+}
+Robot {
+  translation -1.60483 -2.07388 0.053457
+  rotation 0.20715996324682198 0.6786978795891658 0.7045948749946637 2.78315
+  children [
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    LightSensor {
+      translation 0.026862 0.02 0.0500987
+      rotation 0 -1 0 0.984401
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_left"
+    }
+    LightSensor {
+      translation -0.033138 0.02 0.0500985
+      rotation 0 -1 0 2.0944
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_right"
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 1
+        roughness 1
+        metalness 0
+        emissiveIntensity 0
+      }
+      geometry Box {
+        size 0.1 0.075 0.09
+      }
+    }
+    DEF WHEEL1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 53281.089127858846
+        anchor 0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.060004868096769026 -5.911199615867522e-05 0.00011897682766725691
+        rotation 0.9999985837150012 0.001052084981702285 0.0013136533724244974 0.3799952337326073
+        children [
+          DEF WHEEL Transform {
+            rotation 0 1 0 1.5708
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.04
+                  subdivision 24
+                }
+              }
+            ]
+          }
+        ]
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 61391.94403741264
+        anchor -0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.060005240391349496 8.344781210692641e-05 2.519955623939643e-05
+        rotation -0.9999998313148767 -0.0005662412505608783 -0.00012938726619582432 1.3152734132509114
+        children [
+          USE WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+  ]
+  name "robot_ts(14)"
+  boundingObject USE BODY
+  physics Physics {
+    density 1
+    mass 0.5
+  }
+  controller "bumper"
+  controllerArgs [
+    ""
+  ]
+}
+Robot {
+  translation -1.92608 -1.8138 0.045477
+  rotation -0.40096107394023606 -0.6381201176741464 -0.657292121209608 -2.437035307179586
+  children [
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    LightSensor {
+      translation 0.026862 0.02 0.0500987
+      rotation 0 -1 0 0.984401
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_left"
+    }
+    LightSensor {
+      translation -0.033138 0.02 0.0500985
+      rotation 0 -1 0 2.0944
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_right"
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        roughness 1
+        metalness 0
+        emissiveIntensity 0
+      }
+      geometry Box {
+        size 0.1 0.075 0.09
+      }
+    }
+    DEF WHEEL1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 53281.089127858846
+        anchor 0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.060004868096769026 -5.911199615867525e-05 0.00011897682766725699
+        rotation 0.9999985837150012 0.0010520849817022857 0.0013136533724244983 0.3799952337326073
+        children [
+          DEF WHEEL Transform {
+            rotation 0 1 0 1.5708
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.04
+                  subdivision 24
+                }
+              }
+            ]
+          }
+        ]
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 61391.94403741264
+        anchor -0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.060005240391349496 8.344781210692641e-05 2.519955623939643e-05
+        rotation -0.9999998313148767 -0.0005662412505608793 -0.00012938726619582475 1.3152734132509114
+        children [
+          USE WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+  ]
+  name "robot_ts(2)"
+  boundingObject USE BODY
+  physics Physics {
+    density 1
+    mass 0.5
+  }
+  controller "bumper"
+  controllerArgs [
+    ""
+  ]
+}
+Robot {
+  translation -0.178604 -0.484103 0.0784156
+  rotation 0.20715996324682198 0.6786978795891658 0.7045948749946637 2.78315
+  children [
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    LightSensor {
+      translation 0.026862 0.02 0.0500987
+      rotation 0 -1 0 0.984401
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_left"
+    }
+    LightSensor {
+      translation -0.033138 0.02 0.0500985
+      rotation 0 -1 0 2.0944
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_right"
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        roughness 1
+        metalness 0
+        emissiveIntensity 0
+      }
+      geometry Box {
+        size 0.1 0.075 0.09
+      }
+    }
+    DEF WHEEL1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 53281.089127858846
+        anchor 0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.060004868096769026 -5.911199615867523e-05 0.00011897682766725695
+        rotation 0.9999985837150012 0.0010520849817022854 0.0013136533724244976 0.3799952337326073
+        children [
+          DEF WHEEL Transform {
+            rotation 0 1 0 1.5708
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.04
+                  subdivision 24
+                }
+              }
+            ]
+          }
+        ]
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 61391.94403741264
+        anchor -0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.060005240391349496 8.34478121069264e-05 2.5199556239396425e-05
+        rotation -0.9999998313148767 -0.0005662412505608711 -0.0001293872661958229 1.3152734132509114
+        children [
+          USE WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+  ]
+  name "robot_ts(1)"
+  boundingObject USE BODY
+  physics Physics {
+    density 1
+    mass 0.5
+  }
+  controller "bumper"
+  controllerArgs [
+    ""
+  ]
+}
+Robot {
+  translation 2 1.8 0.0396367
+  rotation 0.9898766802412716 -0.10888396482733775 -0.09104087059117201 1.54141
+  children [
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    LightSensor {
+      translation 0.026862 0.02 0.0500987
+      rotation 0 1 0 0.0627926
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_left"
+    }
+    LightSensor {
+      translation -0.033138 0.02 0.0500985
+      rotation 0 -1 0 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_right"
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 1
+        roughness 1
+        metalness 0
+        emissiveIntensity 0
+      }
+      geometry Box {
+        size 0.1 0.075 0.09
+      }
+    }
+    DEF WHEEL1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 54254.69200991256
+        anchor 0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.060004868096769054 -2.2511972406488158e-05 0.00013093099216761702
+        rotation -0.9999745631985418 -0.0052183253629886186 -0.004862307712542172 6.194028893044766
+        children [
+          DEF WHEEL Transform {
+            rotation 0 1 0 1.5708
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.04
+                  subdivision 24
+                }
+              }
+            ]
+          }
+        ]
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 69618.94005621233
+        anchor -0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.06000524039134951 -7.468231629372172e-05 4.495671933204073e-05
+        rotation -0.9999997213113712 0.00014314173862599842 0.0007327261579962423 5.29200662243876
+        children [
+          USE WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+  ]
+  name "robot_ts(3)"
+  boundingObject USE BODY
+  physics Physics {
+    density 1
+    mass 0.5
+  }
+  controller "bumper_random"
+  controllerArgs [
+    ""
+  ]
+}
+Robot {
+  translation -0.498369 -5.15366e-05 0.0595194
+  rotation 0.5500069847609568 0.5895419836655605 0.5915509836098972 2.13727
+  children [
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    LightSensor {
+      translation 0.026862 0.02 0.0500987
+      rotation 0 1 0 0.0627926
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_left"
+    }
+    LightSensor {
+      translation -0.033138 0.02 0.0500985
+      rotation 0 -1 0 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_right"
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 1
+        roughness 1
+        metalness 0
+        emissiveIntensity 0
+      }
+      geometry Box {
+        size 0.1 0.075 0.09
+      }
+    }
+    DEF WHEEL1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 54936.81627113449
+        anchor 0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.060004868096769054 7.15713989518451e-05 -0.00011192519137220069
+        rotation -0.999999946357284 0.0002663199363245829 -0.0001906806779983507 2.6537831364971063
+        children [
+          DEF WHEEL Transform {
+            rotation 0 1 0 1.5708
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.04
+                  subdivision 24
+                }
+              }
+            ]
+          }
+        ]
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 69818.96306780174
+        anchor -0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.06000524039134951 8.708720088424434e-07 8.716534037127066e-05
+        rotation 0.9998893831332009 0.009721927682568092 0.011256359075737367 6.235440239007069
+        children [
+          USE WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+  ]
+  name "robot_ts(5)"
+  boundingObject USE BODY
+  physics Physics {
+    density 1
+    mass 0.5
+  }
+  controller "bumper_random"
+  controllerArgs [
+    ""
+  ]
+}
+Robot {
+  translation 0.067826 -0.46376 0.158741
+  rotation -0.11869796704701563 0.7012538053175951 0.702960804843697 -2.9071253071795864
+  children [
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    LightSensor {
+      translation 0.026862 0.02 0.0500987
+      rotation 0 1 0 0.0627926
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_left"
+    }
+    LightSensor {
+      translation -0.033138 0.02 0.0500985
+      rotation 0 -1 0 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_right"
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 1
+        roughness 1
+        metalness 0
+        emissiveIntensity 0
+      }
+      geometry Box {
+        size 0.1 0.075 0.09
+      }
+    }
+    DEF WHEEL1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 54936.81627113449
+        anchor 0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.060004868096769054 7.15713989518451e-05 -0.00011192519137220069
+        rotation -0.999999946357284 0.0002663199363245829 -0.0001906806779983507 2.6537831364971063
+        children [
+          DEF WHEEL Transform {
+            rotation 0 1 0 1.5708
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.04
+                  subdivision 24
+                }
+              }
+            ]
+          }
+        ]
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 69818.96306780174
+        anchor -0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.06000524039134951 8.708720088424434e-07 8.716534037127066e-05
+        rotation 0.9998893831332009 0.009721927682568092 0.011256359075737367 6.235440239007069
+        children [
+          USE WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+  ]
+  name "robot_ts(4)"
+  boundingObject USE BODY
+  physics Physics {
+    density 1
+    mass 0.5
+  }
+  controller "bumper_random"
+  controllerArgs [
+    ""
+  ]
+}
+Robot {
+  translation 2.16069 1.47592 0.265501
+  rotation -0.884913785372594 0.3293029201307148 0.3293739201134944 -1.6956453071795865
+  children [
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    LightSensor {
+      translation 0.026862 0.02 0.0500987
+      rotation 0 1 0 0.0627926
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_left"
+    }
+    LightSensor {
+      translation -0.033138 0.02 0.0500985
+      rotation 0 -1 0 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_right"
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 1
+        roughness 1
+        metalness 0
+        emissiveIntensity 0
+      }
+      geometry Box {
+        size 0.1 0.075 0.09
+      }
+    }
+    DEF WHEEL1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 54936.81627113449
+        anchor 0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.060004868096769054 7.15713989518451e-05 -0.00011192519137220069
+        rotation -0.999999946357284 0.0002663199363245829 -0.0001906806779983507 2.6537831364971063
+        children [
+          DEF WHEEL Transform {
+            rotation 0 1 0 1.5708
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.04
+                  subdivision 24
+                }
+              }
+            ]
+          }
+        ]
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 69818.96306780174
+        anchor -0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.06000524039134951 8.708720088424434e-07 8.716534037127066e-05
+        rotation 0.9998893831332009 0.009721927682568092 0.011256359075737367 6.235440239007069
+        children [
+          USE WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+  ]
+  name "robot_ts(10)"
+  boundingObject USE BODY
+  physics Physics {
+    density 1
+    mass 0.5
+  }
+  controller "bumper_random"
+  controllerArgs [
+    ""
+  ]
+}
+Robot {
+  translation -1.80079 -1.29054 0.354766
+  rotation 0.4497940648117311 0.6305260908537721 0.6325520911457025 2.29723
+  children [
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    LightSensor {
+      translation 0.026862 0.02 0.0500987
+      rotation 0 1 0 0.0627926
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_left"
+    }
+    LightSensor {
+      translation -0.033138 0.02 0.0500985
+      rotation 0 -1 0 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_right"
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 1
+        roughness 1
+        metalness 0
+        emissiveIntensity 0
+      }
+      geometry Box {
+        size 0.1 0.075 0.09
+      }
+    }
+    DEF WHEEL1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 54936.81627113449
+        anchor 0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.060004868096769054 7.15713989518451e-05 -0.00011192519137220069
+        rotation -0.999999946357284 0.0002663199363245829 -0.0001906806779983507 2.6537831364971063
+        children [
+          DEF WHEEL Transform {
+            rotation 0 1 0 1.5708
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.04
+                  subdivision 24
+                }
+              }
+            ]
+          }
+        ]
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 69818.96306780174
+        anchor -0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.06000524039134951 8.708720088424434e-07 8.716534037127066e-05
+        rotation 0.9998893831332009 0.009721927682568092 0.011256359075737367 6.235440239007069
+        children [
+          USE WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+  ]
+  name "robot_ts(11)"
+  boundingObject USE BODY
+  physics Physics {
+    density 1
+    mass 0.5
+  }
+  controller "bumper_random"
+  controllerArgs [
+    ""
+  ]
+}
+Robot {
+  translation -0.0381768 0.317408 0.0214541
+  rotation 0.8403251150867339 0.3955160541679048 0.3707030507696397 1.775
+  children [
+    TouchSensor {
+      translation 0 -0.01 0.05
+      rotation 0 1 0 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    LightSensor {
+      translation 0.026862 0.02 0.0500987
+      rotation 0 1 0 0.0627926
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_left"
+    }
+    LightSensor {
+      translation -0.033138 0.02 0.0500985
+      rotation 0 -1 0 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_right"
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 1
+        roughness 1
+        metalness 0
+        emissiveIntensity 0
+      }
+      geometry Box {
+        size 0.1 0.075 0.09
+      }
+    }
+    DEF WHEEL1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 54250.17088494092
+        anchor 0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.06000486809676907 -0.00012426390427455953 -4.699144290262679e-05
+        rotation 0.9999999208709331 -2.3985599573932232e-05 0.00039709295939332876 1.8512145608642385
+        children [
+          DEF WHEEL Transform {
+            rotation 0 1 0 1.5708
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.04
+                  subdivision 24
+                }
+              }
+            ]
+          }
+        ]
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 70755.4164741697
+        anchor -0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.06000524039134951 -2.146517292037319e-05 8.448550959539576e-05
+        rotation 0.9999943195032259 -0.001855582969168956 -0.0028138537852180905 0.21105699946071374
+        children [
+          USE WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+  ]
+  name "robot_ts(6)"
+  boundingObject USE BODY
+  physics Physics {
+    density 1
+    mass 0.5
+  }
+  controller "bumper_random"
+  controllerArgs [
+    ""
+  ]
+}
+Robot {
+  translation 0.229933 0.515732 0.118178
+  rotation -0.9917138716348258 0.0700937909272201 0.10765898606486721 -1.590435307179586
+  children [
+    TouchSensor {
+      translation 0 -0.01 0.05
+      rotation 0 1 0 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    LightSensor {
+      translation 0.026862 0.02 0.0500987
+      rotation 0 1 0 0.0627926
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_left"
+    }
+    LightSensor {
+      translation -0.033138 0.02 0.0500985
+      rotation 0 -1 0 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_right"
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 1
+        roughness 1
+        metalness 0
+        emissiveIntensity 0
+      }
+      geometry Box {
+        size 0.1 0.075 0.09
+      }
+    }
+    DEF WHEEL1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 54250.17088494092
+        anchor 0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.06000486809676907 -0.00012426390427455953 -4.699144290262679e-05
+        rotation 0.9999999208709331 -2.3985599573932232e-05 0.00039709295939332876 1.8512145608642385
+        children [
+          DEF WHEEL Transform {
+            rotation 0 1 0 1.5708
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.04
+                  subdivision 24
+                }
+              }
+            ]
+          }
+        ]
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 70755.4164741697
+        anchor -0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.06000524039134951 -2.146517292037319e-05 8.448550959539576e-05
+        rotation 0.9999943195032259 -0.001855582969168956 -0.0028138537852180905 0.21105699946071374
+        children [
+          USE WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+  ]
+  name "robot_ts(12)"
+  boundingObject USE BODY
+  physics Physics {
+    density 1
+    mass 0.5
+  }
+  controller "bumper_random"
+  controllerArgs [
+    ""
+  ]
+}
+Robot {
+  translation -2.06761 -2.1427 0.0397753
+  rotation 0.36992096678738734 0.6696099398804136 0.6440349421766135 2.4762
+  children [
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    LightSensor {
+      translation 0.026862 0.02 0.0500987
+      rotation 0 1 0 0.0627926
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_left"
+    }
+    LightSensor {
+      translation -0.033138 0.02 0.0500985
+      rotation 0 -1 0 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_right"
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 1
+        roughness 1
+        metalness 0
+        emissiveIntensity 0
+      }
+      geometry Box {
+        size 0.1 0.075 0.09
+      }
+    }
+    DEF WHEEL1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 53596.54078351348
+        anchor 0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.06000486809676907 -0.00013064095165015244 -2.4138255189020534e-05
+        rotation 0.9999999082737059 1.2455770406140008e-05 0.00042813249563343616 1.672385095320483
+        children [
+          DEF WHEEL Transform {
+            rotation 0 1 0 1.5708
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.04
+                  subdivision 24
+                }
+              }
+            ]
+          }
+        ]
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 68565.89100634078
+        anchor -0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.06000524039134951 3.501959052632476e-05 -7.982595605105121e-05
+        rotation -0.9999999346981606 -0.0003170326883529787 0.00017347607627891633 2.765925144949765
+        children [
+          USE WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+  ]
+  name "robot_ts(7)"
+  boundingObject USE BODY
+  physics Physics {
+    density 1
+    mass 0.5
+  }
+  controller "bumper_random"
+  controllerArgs [
+    ""
+  ]
+}
+Robot {
+  translation 1.73619 2.20697 0.0325981
+  rotation -0.9900065221204496 0.07507623959452699 0.11937606295785155 -1.593765307179586
+  children [
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    LightSensor {
+      translation 0.026862 0.02 0.0500987
+      rotation 0 1 0 0.0627926
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_left"
+    }
+    LightSensor {
+      translation -0.033138 0.02 0.0500985
+      rotation 0 -1 0 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_right"
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 1
+        roughness 1
+        metalness 0
+        emissiveIntensity 0
+      }
+      geometry Box {
+        size 0.1 0.075 0.09
+      }
+    }
+    DEF WHEEL1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 54671.07369365902
+        anchor 0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.060004868096769054 -0.00012726944694361838 -3.810776149675181e-05
+        rotation -0.9999999163860873 1.023304169455347e-05 -0.0004088069268709931 4.502577603506087
+        children [
+          DEF WHEEL Transform {
+            rotation 0 1 0 1.5708
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.04
+                  subdivision 24
+                }
+              }
+            ]
+          }
+        ]
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 70159.52654866499
+        anchor -0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.06000524039134951 -8.30328782887442e-05 2.6534809273519414e-05
+        rotation -0.9999998089761629 4.732929899775184e-05 0.0006162853033268758 5.059450640765865
+        children [
+          USE WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+  ]
+  name "robot_ts(8)"
+  boundingObject USE BODY
+  physics Physics {
+    density 1
+    mass 0.5
+  }
+  controller "bumper_random"
+  controllerArgs [
+    ""
+  ]
+}
+Robot {
+  translation -1.43467 -1.68531 0.0388025
+  rotation 0.2874640459538624 0.6711631072918074 0.6833041092326622 2.64277
+  children [
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    LightSensor {
+      translation 0.026862 0.02 0.0500987
+      rotation 0 1 0 0.0627926
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_left"
+    }
+    LightSensor {
+      translation -0.033138 0.02 0.0500985
+      rotation 0 -1 0 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_right"
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 1
+        roughness 1
+        metalness 0
+        emissiveIntensity 0
+      }
+      geometry Box {
+        size 0.1 0.075 0.09
+      }
+    }
+    DEF WHEEL1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 54602.840140617474
+        anchor 0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.060004868096769054 -5.153691979802509e-05 -0.000122448599458548
+        rotation 0.9999999464671206 -0.0001469528344704287 0.00029235358753649593 2.662092984021355
+        children [
+          DEF WHEEL Transform {
+            rotation 0 1 0 1.5708
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.04
+                  subdivision 24
+                }
+              }
+            ]
+          }
+        ]
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 69648.01155753745
+        anchor -0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.06000524039134951 8.434433960940352e-05 2.2013344951393134e-05
+        rotation -0.9999998392556175 -0.00055505123338135 -0.00011578802853476794 1.3532469161662406
+        children [
+          USE WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+  ]
+  name "robot_ts(9)"
+  boundingObject USE BODY
+  physics Physics {
+    density 1
+    mass 0.5
+  }
+  controller "bumper_random"
+  controllerArgs [
+    ""
+  ]
+}
+PointLight {
+  attenuation 0 0 1
+  location 1.33 1 0
+}
+PointLight {
+  attenuation 0 0 1
+}
+PointLight {
+  attenuation 0 0 1
+  location -1 -1.5 0
+}
+PointLight {
+  attenuation 0 0 1
+  intensity 3
+  location -2 2 0
+}
+PointLight {
+  attenuation 0 0 1
+  intensity 3
+  location 2 -2 0
+}

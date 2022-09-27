@@ -1,0 +1,550 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.46657588202548383 0.46677280717479297 -0.751285626638967 1.8525298241120753
+  position -0.19000350246316045 7.520185111212362 14.818544885872686
+  follow "robot_ts(3)"
+  followType "None"
+}
+TexturedBackground {
+  luminosity 2
+}
+RectangleArena {
+  floorSize 6 6
+  wallAppearance NULL
+}
+Solid {
+  translation -0.9910091334815034 -1.0000348612194483 0.030380000371428868
+  rotation -2.62149203806691e-15 1.5307756611325673e-13 -1 0.0008428149643243699
+  children [
+    Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 0.1 3.01 0.1
+      }
+    }
+  ]
+  name "solid(9)"
+  boundingObject Box {
+    size 0.1 3.01 0.1
+  }
+  physics Physics {
+    density 1
+    mass 50
+  }
+}
+Robot {
+  translation -2.7 -2.7 0.0368252
+  rotation 0.26263507057294194 0.6630681781737371 0.7009731883592316 2.6009
+  children [
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    LightSensor {
+      translation 0.026862 0.02 0.0500987
+      rotation 0 1 0 -1.508
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_left"
+    }
+    LightSensor {
+      translation -0.033138 0.02 0.0500985
+      rotation 0 1 0 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_right"
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        roughness 1
+        metalness 0
+        emissiveIntensity 0
+      }
+      geometry Box {
+        size 0.1 0.075 0.09
+      }
+    }
+    DEF WHEEL1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 67609.86969651362
+        anchor 0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.060004868096769026 5.6297044173201684e-05 -0.00012033435265537686
+        rotation 0.9999999478463479 -0.00024969349173542294 0.00020484252867437487 3.498062975525254
+        children [
+          DEF WHEEL Transform {
+            rotation 0 1 0 1.5708
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.04
+                  subdivision 24
+                }
+              }
+            ]
+          }
+        ]
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 68074.84702110568
+        anchor -0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.060005240391349496 -4.497507990992507e-05 -7.467126065087984e-05
+        rotation -0.9999999313655556 -0.00020685362493420332 0.00030737674282662773 3.7214563584751335
+        children [
+          USE WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+  ]
+  name "robot_ts(3)"
+  boundingObject USE BODY
+  physics Physics {
+    density 1
+    mass 0.5
+  }
+  controller "bumper"
+  controllerArgs [
+    ""
+  ]
+}
+Robot {
+  translation -2.22158 -2.6332 0.039786
+  rotation 0.7893551301598256 0.42330242035048854 0.4446723956080288 1.7564524381391449
+  children [
+    TouchSensor {
+      translation 0 -0.01 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+            emissiveIntensity 0
+          }
+          geometry Box {
+            size 0.1 0.02 0.03
+          }
+        }
+      ]
+      name "bumper"
+      boundingObject Box {
+        size 0.1 0.02 0.03
+      }
+    }
+    LightSensor {
+      translation 0.026862 0.02 0.0500987
+      rotation 0 1 0 -1.508
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_left"
+    }
+    LightSensor {
+      translation -0.033138 0.02 0.0500985
+      rotation 0 1 0 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 1 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "is_right"
+    }
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 1
+        roughness 1
+        metalness 0
+        emissiveIntensity 0
+      }
+      geometry Box {
+        size 0.1 0.075 0.09
+      }
+    }
+    DEF WHEEL1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 69381.696696279
+        anchor 0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.060004868096769026 5.250888405271649e-05 -0.00012203495690647966
+        rotation 0.9999999481261351 -0.0002457997800270608 0.00020815906234152297 3.4668061178918106
+        children [
+          DEF WHEEL Transform {
+            rotation 0 1 0 1.5708
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                  roughness 1
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.04
+                  subdivision 24
+                }
+              }
+            ]
+          }
+        ]
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+    DEF WHEEL2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 69991.57398142638
+        anchor -0.05 0 -1.73472e-18
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.060005240391349496 -1.617788854824349e-05 -8.56553028260156e-05
+        rotation 0.9999999361748649 0.00024873458426372444 -0.0002564787956325442 2.917170556224009
+        children [
+          USE WHEEL
+        ]
+        name "solid(1)"
+        boundingObject USE WHEEL
+        physics Physics {
+        }
+      }
+    }
+  ]
+  name "robot_ts(1)"
+  boundingObject USE BODY
+  physics Physics {
+    density 1
+    mass 0.5
+  }
+  controller "bumper_random"
+  controllerArgs [
+    ""
+  ]
+}
+PointLight {
+  attenuation 0 0 1
+  intensity 10
+  location 2.5 2.5 0
+}
+Solid {
+  translation 2.001903489683753 2.0612549633997137 0.03038000037142887
+  rotation 8.288542423091443e-16 -7.549439123731295e-12 -1 0.0004784561035136065
+  children [
+    Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 0.1 1 0.1
+      }
+    }
+  ]
+  boundingObject Box {
+    size 0.1 1 0.1
+  }
+  physics Physics {
+    density 1
+    mass 50
+  }
+}
+Solid {
+  translation -2.070062303978956 -1.4996607152199717 0.030525481844320575
+  rotation 0.012460571457785632 -0.14907910574046057 0.9887467594842323 0.04676794891882595
+  children [
+    Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 0.1 1 0.1
+      }
+    }
+  ]
+  name "solid(12)"
+  boundingObject Box {
+    size 0.1 1 0.1
+  }
+  physics Physics {
+    density 1
+    mass 50
+  }
+}
+Solid {
+  translation -2.499926586529001 -0.008218058228313209 0.030380976119969653
+  rotation -0.03202745789670798 0.0016101085202127087 -0.9994856924895062 0.001571966975351876
+  children [
+    Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject Box {
+    size 1 0.1 0.1
+  }
+  physics Physics {
+    density 1
+    mass 50
+  }
+}
+Solid {
+  translation -2.0321788220343957 -0.9495373732563849 0.030226333277451962
+  rotation -0.9950261294354062 0.0008563567897323332 -0.09961058374411114 0.016772048716118593
+  children [
+    Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(11)"
+  boundingObject Box {
+    size 1 0.1 0.1
+  }
+  physics Physics {
+    density 1
+    mass 50
+  }
+}
+Solid {
+  translation 2.0363070243802186 0.9844183265099776 0.030380000371428868
+  rotation 1.2864595336695466e-12 4.8524835923089135e-15 1 0.002989998504897127
+  children [
+    Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(10)"
+  boundingObject Box {
+    size 1 0.1 0.1
+  }
+  physics Physics {
+    density 1
+    mass 50
+  }
+}
+Solid {
+  translation -0.03401834304440719 -0.07879469685340959 0.030379999999895484
+  rotation 0.00011405543753232255 1.433977628694589e-07 0.9999999934956683 0.0025145305820715854
+  children [
+    Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(3)"
+  boundingObject Box {
+    size 1 0.1 0.1
+  }
+  physics Physics {
+    density 1
+    mass 50
+  }
+}
+Solid {
+  translation -1.0196069893754798 2.0254491974606625 0.03038000037150032
+  rotation -1.33394046454538e-11 -3.987369330578527e-15 1 0.00013371694138342827
+  children [
+    Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 3 0.1 0.1
+      }
+    }
+  ]
+  name "solid(5)"
+  boundingObject Box {
+    size 3 0.1 0.1
+  }
+  physics Physics {
+    density 1
+    mass 50
+  }
+}
+Solid {
+  translation -1.0208145061219192 0.9794689936350067 0.030380000371500307
+  rotation -1.4340361070396591e-09 7.070811913419616e-12 -1 0.009864562539450386
+  children [
+    Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 2 0.1 0.1
+      }
+    }
+  ]
+  name "solid(7)"
+  boundingObject Box {
+    size 2 0.1 0.1
+  }
+  physics Physics {
+    density 1
+    mass 50
+  }
+}
+Solid {
+  translation 1.03805959739898 -0.14536817520898856 0.03038000037142887
+  rotation -1.8927592088536306e-15 1.285213627819438e-11 1 0.0003359671974065881
+  children [
+    Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 0.1 4.01 0.1
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject Box {
+    size 0.1 4.01 0.1
+  }
+  physics Physics {
+    density 1
+    mass 50
+  }
+}
+Solid {
+  translation 0.02922678997201227 -1.9389974592553645 0.030380000371428878
+  rotation 1.792570396104964e-15 -6.729700670248432e-14 -1 0.002081922523395462
+  children [
+    Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 0.1 2.01 0.1
+      }
+    }
+  ]
+  name "solid(6)"
+  boundingObject Box {
+    size 0.1 2.01 0.1
+  }
+  physics Physics {
+    density 1
+    mass 50
+  }
+}
+Solid {
+  translation 1.9657894439943036 -1.0006238319362057 0.030380000371428878
+  rotation -8.966202919154893e-16 -1.3045820505767568e-12 1 0.0023056932022526857
+  children [
+    Shape {
+      appearance Appearance {
+      }
+      geometry Box {
+        size 0.1 2.05 0.1
+      }
+    }
+  ]
+  name "solid(4)"
+  boundingObject Box {
+    size 0.1 2.05 0.1
+  }
+  physics Physics {
+    density 1
+    mass 50
+  }
+}
